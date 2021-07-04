@@ -9,11 +9,11 @@ using System.Web.Mvc;
 
 namespace _1811061832_NguyenNhatThanh_BigSchool.Controllers
 {
-    public class CourseController : Controller
+    public class CoursesController : Controller
     {
         // GET: Course
         private readonly ApplicationDbContext _dbContext;
-        public CourseController()
+        public CoursesController()
         {
             _dbContext = new ApplicationDbContext();
         }
@@ -25,10 +25,11 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.Controllers
                 Categories = _dbContext.Categories.ToList()
             };
             return View(viewModel);
-        }
+        } 
         [HttpPost]
         public ActionResult Create(CourseViewModel viewModel)
             {
+
                 var course  = new Course
                 {
                     LecturerId = User.Identity.GetUserId(),
@@ -38,8 +39,8 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.Controllers
                 };
                 _dbContext.Courses.Add(course);
                 _dbContext.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return View();
             }
-        
+  
     }
 }
