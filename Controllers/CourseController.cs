@@ -27,6 +27,7 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.Controllers
             return View(viewModel);
         } 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(CourseViewModel viewModel)
             {
 
