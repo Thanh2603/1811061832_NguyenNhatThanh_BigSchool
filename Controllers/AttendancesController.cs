@@ -1,14 +1,12 @@
 ﻿using _1811061832_NguyenNhatThanh_BigSchool.Models;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Mvc;
-using FromBodyAttribute = System.Web.Http.FromBodyAttribute;
-using HttpPostAttribute = System.Web.Http.HttpPostAttribute;
+
 
 namespace _1811061832_NguyenNhatThanh_BigSchool.Controllers
 {
@@ -22,10 +20,13 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.Controllers
         [HttpPost]
         public IHttpActionResult Attend([FromBody] int courseId)
         {
+            var userId = User.Identity.GetUserId();
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == courseId))
+                return BadRequest("The Attendance already exists!");
             var attendance = new Attendance
-            {
+            {    
                 CourseId = courseId,
-                AttendeeId = User.Identity.GetUserId()
+                AttendeeId = userId
             };
             _dbContext.Attendances.Add(attendance);
             _dbContext.SaveChanges();
