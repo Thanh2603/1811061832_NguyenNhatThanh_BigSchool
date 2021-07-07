@@ -9,6 +9,7 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.Models
 {
     public class Attendance
     {
+        
         public Course Course { get; set; }
         [Key]
         [Column(Order = 1)]
