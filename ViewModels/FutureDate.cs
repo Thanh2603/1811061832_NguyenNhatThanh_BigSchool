@@ -14,7 +14,7 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.ViewModels
 
             DateTime dateTime;
             var isValid = DateTime.TryParseExact(Convert.ToString(value),
-                "dd/M/yyy",
+                "dd/M/yyyy",
                 CultureInfo.CurrentCulture,
                 DateTimeStyles.None,
                 out dateTime);

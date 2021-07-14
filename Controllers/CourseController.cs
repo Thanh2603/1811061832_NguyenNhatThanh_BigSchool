@@ -45,7 +45,7 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.Controllers
                 };
                 _dbContext.Courses.Add(course);
                 _dbContext.SaveChanges();
-                return View();
+                return RedirectToAction("Index","Home");
             }
         [Authorize]
         public ActionResult Attending()
