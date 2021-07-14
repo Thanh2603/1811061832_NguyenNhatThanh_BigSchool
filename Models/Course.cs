@@ -20,7 +20,7 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.Models
         public Category Category { get; set; }
         [Required]
         public byte CategoryId { get; set; }
-        //Ghi chú
+        //Ghi ch
     }
  
 }
