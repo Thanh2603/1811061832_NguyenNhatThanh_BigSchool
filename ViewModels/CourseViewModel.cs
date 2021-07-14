@@ -25,7 +25,7 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.ViewModels
         public DateTime GetDateTime()
         {
             string dateString = Date + " " + Time;
-            DateTime date3 = DateTime.ParseExact(dateString, @"dd/MM/yyyy HH:mm",
+            DateTime date3 = DateTime.ParseExact(dateString, @"dd/M/yyyy HH:mm",
                 System.Globalization.CultureInfo.InvariantCulture);
 
             return date3;

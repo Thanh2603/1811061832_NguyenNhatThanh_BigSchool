@@ -16,7 +16,7 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.ViewModels
                 "HH:mm",
                 CultureInfo.CurrentCulture,
                 DateTimeStyles.None,
-                out dateTime );
+                out dateTime);
 
             return isValid;
         }

@@ -19,7 +19,7 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.ViewModels
                 DateTimeStyles.None,
                 out dateTime);
 
-            return isValid && dateTime > DateTime.Now;
+            return (isValid && dateTime > DateTime.Now);
          }
         
             
