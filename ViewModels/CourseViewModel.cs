@@ -24,7 +24,11 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.ViewModels
         public IEnumerable<Category> Categories { get; set; }
         public DateTime GetDateTime()
         {
-            return DateTime.Parse(string.Format("{0} {1}", Date, Time));
+            string dateString = Date + " " + Time;
+            DateTime date3 = DateTime.ParseExact(dateString, @"dd/MM/yyyy HH:mm",
+                System.Globalization.CultureInfo.InvariantCulture);
+
+            return date3;
         }
     }
 }
