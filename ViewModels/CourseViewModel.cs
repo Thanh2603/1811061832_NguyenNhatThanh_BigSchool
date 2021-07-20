@@ -22,6 +22,11 @@ namespace _1811061832_NguyenNhatThanh_BigSchool.ViewModels
 
         public byte Category { get; set; }
         public IEnumerable<Category> Categories { get; set; }
+        public string Heading { get; set; }
+        public string Action
+        {
+            get { return (Id != 0) ? "Update" : "Create"; }
+        }
         public DateTime GetDateTime()
         {
             string dateString = Date + " " + Time;
